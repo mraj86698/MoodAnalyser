@@ -1,5 +1,7 @@
 package com.java.maven.MoodAnalyser;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -29,5 +31,13 @@ private MoodAnalyser analyser;
 	public void message_WhenNotSad_MustReturn_Happy() {
 		analyser = new MoodAnalyser("I am a Any Mood");
 		Assert.assertEquals("HAPPY", analyser.analyzeMessage());
+	}
+
+
+	@Test
+	public void givenMessage_WhenNull_ShouldReturnHappy() {
+		MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+		String mood = moodAnalyser.analyzeMessage();
+		assertEquals("HAPPY", mood);
 	}
 }
