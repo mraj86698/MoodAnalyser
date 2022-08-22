@@ -26,6 +26,10 @@ public class MoodAnalyser
 	 */
 
 	public String analyzeMessage() {
+		/**
+		 * Handle Exception if User Provides Invalid Mood
+		 * Given Null Mood Should Return Happy
+		 */
 		try {
 			String msg=message.toLowerCase();
 			if (msg.contains("sad")) {
